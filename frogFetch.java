@@ -25,7 +25,10 @@ public class frogFetch {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		String filePath = ".tadpoles/welcome.txt";
+    // directory written in the .pdf file didn't exist.
+    // if you wish for users to use files divided by directories 
+    // please create them firstly
+		String filePath = "welcome.txt";
 		
 		try {
             File file = new File(filePath);
@@ -57,7 +60,9 @@ public class frogFetch {
             String ignoredRGB = "200200200"; // This color will be treated as transparent. Use this for backgrounds
 
 
-			File imageFile = new File("frogs", pixelArt + ".png");
+      // needed directories didn't exist 
+      // had an issue with it
+			File imageFile = new File(pixelArt + ".png");
 			scan.close();
 			FileWriter writer = new FileWriter(pixelArt + ".txt");
 			writer.write("\\033[38;2;0;0;0m");
@@ -66,8 +71,9 @@ public class frogFetch {
 
 			int width = image.getWidth();
 			int height = image.getHeight();
-			int prevColor = 0;
-			Path ASCIIFolder = Paths.get("toads/"+pixelArt+".txt");
+
+      int prevColor = 0;
+			Path ASCIIFolder = Paths.get(pixelArt+".txt");
 			Path ASCIIFile = Paths.get(pixelArt+".txt");
 			//------------------------------------------------------------------------------------------------------------------------------
 
